@@ -15,11 +15,22 @@
 
 <h1>Tehthävä 2</h1>
 
-
 <ul>
   <li *ngFor="let tyopaikka of apivastaus">
-    <a href="{{tyopaikka.linkki}}">Ammattiala {{tyopaikka.linkki}}</a>
+    <a href="{{tyopaikka.linkki}}">Ammattiala: {{tyopaikka.linkki}}</a>
   </li>
 </ul>
+
+
+<ul>
+  <li>
+    {{ apivastaus2.upperRightLatitude }}
+    {{  apivastaus2.upperRightLongitude}}
+    {{apivastaus2.travelOptions}}
+    {{apivastaus2.transitModes}}
+  </li>
+</ul>
+
+
 
 

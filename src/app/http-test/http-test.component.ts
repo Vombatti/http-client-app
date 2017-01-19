@@ -10,6 +10,7 @@ export class HttpTestComponent implements OnInit {
 
   private vastaus: any = {};
   private apivastaus: any = [];
+  private apivastaus2: any = {};
 
   constructor(private http: Http) { }
 
@@ -25,6 +26,8 @@ export class HttpTestComponent implements OnInit {
   }
 
   private getApi(){
+    // Vantaan avoimet työpaikat Api http://gis.vantaa.fi/rest/tyopaikat/v1
+    // HSL Api http://api.digitransit.fi/routing/v1/routers/hsl/
     this.http.get('http://gis.vantaa.fi/rest/tyopaikat/v1')
       .subscribe(
         (res:Response) =>  {
@@ -35,11 +38,24 @@ export class HttpTestComponent implements OnInit {
       );
   }
 
+  private getApi2(){
+    // Vantaan avoimet työpaikat Api http://gis.vantaa.fi/rest/tyopaikat/v1
+    // HSL Api http://api.digitransit.fi/routing/v1/routers/hsl/
+    this.http.get('http://api.digitransit.fi/routing/v1/routers/hsl/')
+      .subscribe(
+        (res:Response) =>  {
+          const json =res.json();
+          this.apivastaus2 = json;
+          console.log(this.apivastaus2);
+        }
+      );
+  }
 
 
   ngOnInit() {
     this.getJson();
     this.getApi();
+    this.getApi2();
   }
 
 }
