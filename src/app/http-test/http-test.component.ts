@@ -10,7 +10,7 @@ export class HttpTestComponent implements OnInit {
 
   private vastaus: any = {};
   private apivastaus: any = [];
-  private apivastaus2: any = {};
+  private apivastaus2: any = [];
 
   constructor(private http: Http) { }
 

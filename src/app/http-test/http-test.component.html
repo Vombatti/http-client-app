@@ -27,14 +27,29 @@
   </li>
 </ul>
 
+
 <ul>
   <li>
     {{ apivastaus2.upperRightLatitude }}
+  </li>
+  <li>
     {{  apivastaus2.upperRightLongitude}}
-    {{apivastaus2.travelOptions}}
+  </li>
+</ul>
+
+<ul>
+  <li>
     {{apivastaus2.transitModes}}
   </li>
 </ul>
+
+<!--
+<ul>
+  <li *ngFor="let kulku of apivastaus2">
+    {{kulku.transitModes}}
+  </li>
+</ul>-->
+
 
 
 
